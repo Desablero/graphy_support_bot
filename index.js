@@ -28,7 +28,6 @@ let forwardToAdmin = (msg) => {
 };
 
 // Старт бота
-
 bot.start((msg) => {
     const dogGif = new Promise(function (resolve, reject) {
         msg.telegram.sendDocument(msg.from.id, {
@@ -39,3 +38,20 @@ bot.start((msg) => {
     msg.reply(isAdmin(msg.message.from.id) ? replyText.helloAdmin : replyText.helloUser1 + replyText.helloUser2)
     dogGif.then()
 })
+
+// Слушаем на наличие объекта message
+bot.on('message', (msg) => {
+    // убеждаемся что это админ ответил на сообщение пользователя
+    if (msg.message.reply_to_message
+        && msg.message.reply_to_message.forward_from
+        && isAdmin(msg.message.from.id)) {
+        // отправляем копию пользователю
+        msg.telegram.sendCopy(msg.message.reply_to_message.forward_from.id, msg.message);
+    } else {
+        // перенаправляем админу
+        forwardToAdmin(msg);
+    }
+});
+
+// запуск бота
+bot.launch();
