@@ -1,0 +1,25 @@
+{
+  "name": "graphy_support_bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for user-admin feedback.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desablero/graphy_support_bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desablero/graphy_support_bot/issues"
+  },
+  "homepage": "https://github.com/desablero/graphy_support_bot#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "telegraf": "^3.38.0"
+  }
+}
