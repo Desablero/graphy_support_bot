@@ -4,6 +4,7 @@
   "description": "Telegram bot for user-admin feedback.",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon C:\\Users\\Admin\\Documents\\GitHub\\labs\\LvL 2\\index.html:",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
     "telegraf": "^3.38.0"
   }
 }
